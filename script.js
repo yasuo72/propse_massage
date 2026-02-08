@@ -47,25 +47,26 @@ let memories = [];
 document.addEventListener('DOMContentLoaded', async () => {
     console.log('DOM loaded, initializing...');
     
-    // Check for URL parameters first
+    // Load config first
+    await loadConfig();
+    
+    // Check for URL parameters and override config
     const urlParams = new URLSearchParams(window.location.search);
-    const customConfig = {
-        names: {
+    
+    if (urlParams.get('yourName') || urlParams.get('partnerName')) {
+        config.names = {
             yourName: urlParams.get('yourName') || config.names?.yourName || 'Rohit',
             herName: urlParams.get('partnerName') || config.names?.herName || 'Sonam'
-        },
-        proposal: {
+        };
+    }
+    
+    if (urlParams.get('question') || urlParams.get('message') || urlParams.get('title')) {
+        config.proposal = {
             question: urlParams.get('question') || config.proposal?.question || 'Will You Marry Me?',
             subtitle: urlParams.get('message') || config.proposal?.subtitle || 'Click the heart to open',
             title: urlParams.get('title') || config.proposal?.title || 'Our Forever'
-        }
-    };
-    
-    // Merge with loaded config
-    config = { ...config, ...customConfig };
-    
-    // Load config first
-    await loadConfig();
+        };
+    }
     
     // Use config data or fallback to defaults
     if (config.names) {
