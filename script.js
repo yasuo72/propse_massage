@@ -47,6 +47,23 @@ let memories = [];
 document.addEventListener('DOMContentLoaded', async () => {
     console.log('DOM loaded, initializing...');
     
+    // Check for URL parameters first
+    const urlParams = new URLSearchParams(window.location.search);
+    const customConfig = {
+        names: {
+            yourName: urlParams.get('yourName') || config.names?.yourName || 'Rohit',
+            herName: urlParams.get('partnerName') || config.names?.herName || 'Sonam'
+        },
+        proposal: {
+            question: urlParams.get('question') || config.proposal?.question || 'Will You Marry Me?',
+            subtitle: urlParams.get('message') || config.proposal?.subtitle || 'Click the heart to open',
+            title: urlParams.get('title') || config.proposal?.title || 'Our Forever'
+        }
+    };
+    
+    // Merge with loaded config
+    config = { ...config, ...customConfig };
+    
     // Load config first
     await loadConfig();
     
@@ -63,6 +80,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     setupEventListeners();
     populateMemories();
     simulateLoading();
+    
+    // Setup customization modal
+    setupCustomization();
 });
 
 function populateContentFromConfig() {
@@ -430,6 +450,74 @@ function showSceneOverlay(sceneId) {
     } else {
         console.log('Scene not found:', sceneId);
     }
+}
+
+function setupCustomization() {
+    const customizeBtn = document.getElementById('customize-btn');
+    const customizeModal = document.getElementById('customize-modal');
+    const closeModal = document.getElementById('close-modal');
+    const generateLinkBtn = document.getElementById('generate-link');
+    const copyLinkBtn = document.getElementById('copy-link');
+    
+    // Pre-fill form with current config
+    const yourNameInput = document.getElementById('your-name');
+    const partnerNameInput = document.getElementById('partner-name');
+    const questionInput = document.getElementById('proposal-question-input');
+    const messageInput = document.getElementById('proposal-message');
+    
+    if (config.names) {
+        yourNameInput.value = config.names.yourName || '';
+        partnerNameInput.value = config.names.herName || '';
+    }
+    if (config.proposal) {
+        questionInput.value = config.proposal.question || '';
+        messageInput.value = config.proposal.subtitle || '';
+    }
+    
+    // Open modal
+    customizeBtn.addEventListener('click', () => {
+        customizeModal.classList.remove('hidden');
+    });
+    
+    // Close modal
+    closeModal.addEventListener('click', () => {
+        customizeModal.classList.add('hidden');
+    });
+    
+    // Close on background click
+    customizeModal.addEventListener('click', (e) => {
+        if (e.target === customizeModal) {
+            customizeModal.classList.add('hidden');
+        }
+    });
+    
+    // Generate shareable link
+    generateLinkBtn.addEventListener('click', () => {
+        const baseUrl = window.location.origin + window.location.pathname;
+        const params = new URLSearchParams();
+        
+        if (yourNameInput.value) params.set('yourName', yourNameInput.value);
+        if (partnerNameInput.value) params.set('partnerName', partnerNameInput.value);
+        if (questionInput.value) params.set('question', questionInput.value);
+        if (messageInput.value) params.set('message', messageInput.value);
+        
+        const shareableUrl = `${baseUrl}?${params.toString()}`;
+        
+        document.getElementById('generated-link').value = shareableUrl;
+        document.getElementById('generated-link-container').classList.remove('hidden');
+    });
+    
+    // Copy link to clipboard
+    copyLinkBtn.addEventListener('click', () => {
+        const linkInput = document.getElementById('generated-link');
+        linkInput.select();
+        document.execCommand('copy');
+        
+        copyLinkBtn.textContent = '✓ Copied!';
+        setTimeout(() => {
+            copyLinkBtn.textContent = '📋 Copy Link';
+        }, 2000);
+    });
 }
 
 function setupEventListeners() {
