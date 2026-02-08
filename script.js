@@ -55,8 +55,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     
     if (urlParams.get('yourName') || urlParams.get('partnerName')) {
         config.names = {
-            yourName: urlParams.get('yourName') || config.names?.yourName || 'Rohit',
-            herName: urlParams.get('partnerName') || config.names?.herName || 'Sonam'
+            yourName: urlParams.get('yourName') || config.names?.yourName || 'Your Name',
+            herName: urlParams.get('partnerName') || config.names?.herName || "Partner's Name"
         };
     }
     
