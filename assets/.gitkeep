@@ -1,0 +1,15 @@
+# This file ensures the assets directory is tracked by git
+# Add your images and audio files here
+
+# Recommended structure:
+# assets/
+# ├── images/
+# │   ├── photo1.jpg
+# │   ├── photo2.jpg
+# │   └── ...
+# ├── audio/
+# │   ├── song1.mp3
+# │   ├── song2.mp3
+# │   └── ...
+# └── fonts/
+#     └── custom-font.ttf

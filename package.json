@@ -1,0 +1,23 @@
+{
+  "name": "proposal-website",
+  "version": "1.0.0",
+  "description": "A stunning 3D animated proposal website",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server -p 8080 -o",
+    "dev": "npx live-server --port=8080"
+  },
+  "keywords": [
+    "proposal",
+    "threejs",
+    "3d",
+    "animation",
+    "romantic"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "live-server": "^1.2.2"
+  }
+}

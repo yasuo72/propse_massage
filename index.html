@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohit & Sonam - Our Forever 💍</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="heart-pulse"></div>
+        <p class="loading-text">Preparing something special...</p>
+        <div class="progress-bar">
+            <div class="progress-fill"></div>
+        </div>
+        <p class="loading-quote">"Love is not about how many days, months, or years you've been together. It's all about how much you love each other every day."</p>
+    </div>
+
+    <!-- Audio Controls -->
+    <div id="audio-controls">
+        <button id="play-pause-btn" class="audio-btn">
+            <span class="icon">▶</span>
+        </button>
+        <input type="range" id="volume-slider" min="0" max="100" value="50" class="volume-slider">
+        <div id="now-playing">♪ Can't Help Falling in Love</div>
+    </div>
+
+    <!-- Main Canvas -->
+    <canvas id="canvas"></canvas>
+
+    <!-- Scene Overlays -->
+    <div id="scene-overlays">
+        <!-- Scene 1: Enchanted Entry -->
+        <div class="scene-overlay" id="scene-1" data-scroll="0-10">
+            <h1 class="title-text" id="scene1-title">Loading...</h1>
+            <p class="subtitle-text" id="scene1-subtitle">Scroll to begin our story</p>
+            <div class="scroll-indicator">
+                <span>↓</span>
+            </div>
+        </div>
+
+        <!-- Scene 2: Memory Lane -->
+        <div class="scene-overlay" id="scene-2" data-scroll="10-30">
+            <h2 class="section-title">Our Beautiful Memories</h2>
+            <div class="memory-timeline" id="memory-timeline"></div>
+        </div>
+
+        <!-- Scene 3: Reasons Why I Love You -->
+        <div class="scene-overlay" id="scene-3" data-scroll="30-50">
+            <h2 class="section-title">Why I Love You</h2>
+            <p class="subtitle-text">Click on the hearts to discover</p>
+        </div>
+
+        <!-- Scene 4: Our Future Together -->
+        <div class="scene-overlay" id="scene-4" data-scroll="50-70">
+            <h2 class="section-title">Our Forever</h2>
+            <p class="subtitle-text">Dreams we'll build together</p>
+        </div>
+
+        <!-- Scene 5: The Big Question -->
+        <div class="scene-overlay" id="scene-5" data-scroll="70-90">
+            <h1 class="proposal-text" id="proposal-question">Loading...</h1>
+            <p class="proposal-subtitle" id="proposal-subtitle">Click the heart to open</p>
+        </div>
+
+        <!-- Scene 6: Response -->
+        <div class="scene-overlay" id="scene-6" data-scroll="90-100">
+            <div class="response-buttons">
+                <button class="response-btn yes-btn" id="yes-btn">YES! 💍</button>
+                <button class="response-btn no-btn">No (just kidding, click YES)</button>
+            </div>
+        </div>
+
+        <!-- Celebration Screen -->
+        <div id="celebration-screen" class="hidden">
+            <h1 class="celebration-text" id="celebration-title">SHE SAID YES! 💕</h1>
+            <div class="love-letter" id="love-letter"></div>
+            <button class="download-btn" id="download-btn">📥 Save This Moment</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

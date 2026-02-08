@@ -1,0 +1,74 @@
+{
+  "names": {
+    "yourName": "Rohit",
+    "herName": "Sonam"
+  },
+  "proposal": {
+    "title": "Our Forever",
+    "question": "Will You Marry Me?",
+    "subtitle": "Click the heart to open"
+  },
+  "celebration": {
+    "title": "SHE SAID YES!",
+    "loveLetter": {
+      "greeting": "My Dearest",
+      "closing": "With all my love,",
+      "message": "From the moment I met you, my life has been a beautiful adventure. Every day with you feels like a blessing, and every moment we share becomes a cherished memory.\n\nYou are my best friend, my greatest love, and my dream come true. Your smile lights up my darkest days, your laugh brings joy to my soul, and your love makes me believe in forever.\n\nThank you for saying YES to spending the rest of our lives together. I promise to love you, cherish you, and make every moment special for you.\n\nHere's to forever together."
+    }
+  },
+  "relationship": {
+    "startDate": "2023-03-11"
+  },
+  "memories": [
+    {
+      "date": "2023-03-11",
+      "title": "Where It All Began",
+      "desc": "Coffee shop on a rainy afternoon"
+    },
+    {
+      "date": "First Kiss",
+      "title": "Magic Moment",
+      "desc": "Under the stars at midnight"
+    },
+    {
+      "date": "Our Trip",
+      "title": "Paris Adventure",
+      "desc": "Eiffel Tower at sunset"
+    },
+    {
+      "date": "Moving In",
+      "title": "New Chapter",
+      "desc": "Our first home together"
+    },
+    {
+      "date": "Anniversary",
+      "title": "One Year Later",
+      "desc": "Dinner at our favorite restaurant"
+    }
+  ],
+  "loveReasons": [
+    "Your smile lights up my darkest days",
+    "The way you laugh at my terrible jokes",
+    "How you believe in me when I don't believe in myself",
+    "Your kindness towards everyone you meet",
+    "The little notes you leave me",
+    "How you make ordinary moments extraordinary",
+    "Your beautiful soul",
+    "The way you support my dreams",
+    "Your warm hugs that make everything better",
+    "How you always know what to say",
+    "Your passion for life",
+    "The way you make me a better person",
+    "Your adorable laugh",
+    "How you love me unconditionally",
+    "Your strength and resilience",
+    "The way you make coffee in the morning",
+    "Your perfect imperfections",
+    "How you make every day special",
+    "Your beautiful eyes",
+    "The way you hold my hand",
+    "Your sense of adventure",
+    "How you make me feel safe",
+    "Your creative spirit"
+  ]
+}
